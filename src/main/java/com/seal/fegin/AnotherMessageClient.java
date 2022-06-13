@@ -16,4 +16,12 @@ public interface AnotherMessageClient {
     @Headers("Content-Type: application/json")
     Message2 postMessageWithParam(@Param("id") String id, Message2 message2);
 
+    @RequestLine("PUT /intro/{id}")
+    @Headers("Content-Type: application/json")
+    Message2 postMessageWithParamPut(@Param("id") String id, Message2 message2);
+
+    @RequestLine("PATCH /intro/{id}")
+    @Headers("Content-Type: application/json")
+    Message2 postMessageWithParamPatch(@Param("id") String id, Message2 message2);
+
 }

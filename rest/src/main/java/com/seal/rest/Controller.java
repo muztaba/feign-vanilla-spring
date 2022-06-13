@@ -24,4 +24,18 @@ public class Controller {
         message2.setName(message2.getName() + " " + id);
         return message2;
     }
+
+    @PatchMapping("/intro/{id}")
+    public Message2 message3(@PathVariable("id")String id, @RequestBody Message2 message2) {
+        message2.setName(message2.getName() + " " + id);
+        return message2;
+    }
+
+    @PutMapping("/intro/{id}")
+    public Message2 message4(@PathVariable("id")String id, @RequestBody Message2 message2) {
+        message2.setName(message2.getName() + " " + id);
+        return message2;
+    }
+
+
 }
