@@ -1,9 +1,9 @@
 package com.seal.rest;
 
-import jakarta.websocket.server.PathParam;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalTime;
+import java.util.List;
 
 @RestController
 public class Controller {
@@ -35,6 +35,11 @@ public class Controller {
     public Message2 message4(@PathVariable("id")String id, @RequestBody Message2 message2) {
         message2.setName(message2.getName() + " " + id);
         return message2;
+    }
+
+    @GetMapping("/intro/list")
+    public List<Message2> getList() {
+        return List.of(new Message2("name 1", 1), new Message2("name 2", 2)) ;
     }
 
 

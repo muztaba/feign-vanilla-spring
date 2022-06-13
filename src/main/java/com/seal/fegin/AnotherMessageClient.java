@@ -5,6 +5,8 @@ import feign.Param;
 import feign.RequestLine;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 @Component
 public interface AnotherMessageClient {
 
@@ -24,4 +26,6 @@ public interface AnotherMessageClient {
     @Headers("Content-Type: application/json")
     Message2 postMessageWithParamPatch(@Param("id") String id, Message2 message2);
 
+    @RequestLine("GET /intro/list")
+    List<Message2> getList();
 }

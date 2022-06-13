@@ -3,6 +3,8 @@ package com.seal.fegin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 public class TestController {
 
@@ -69,5 +71,12 @@ public class TestController {
         Message2 res = anotherMessageClient.postMessageWithParamPatch("1", message2);
         System.out.println(res);
         return res.getName();
+    }
+
+    @GetMapping("/list")
+    public String list() {
+        List<Message2> res = anotherMessageClient.getList();
+        System.out.println(res);
+        return res.toString();
     }
 }

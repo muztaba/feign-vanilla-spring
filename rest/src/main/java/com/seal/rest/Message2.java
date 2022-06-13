@@ -8,6 +8,11 @@ public class Message2 {
     public Message2() {
     }
 
+    public Message2(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
     public String getName() {
         return name;
     }
