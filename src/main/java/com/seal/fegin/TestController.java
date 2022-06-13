@@ -40,4 +40,15 @@ public class TestController {
         System.out.println(res);
         return res.getName();
     }
+
+    @GetMapping("/post4")
+    public String message4() {
+        Message2 message2 = new Message2();
+        message2.setName("TestName another message with param ");
+        message2.setAge(60);
+        Message2 res = anotherMessageClient.postMessageWithParam("1", message2);
+//        Message2 res = anotherMessageClient.postMessage( message2);
+        System.out.println(res);
+        return res.getName();
+    }
 }
